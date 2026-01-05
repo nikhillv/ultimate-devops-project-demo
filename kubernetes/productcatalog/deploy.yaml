@@ -30,7 +30,7 @@ spec:
     spec:
       containers:
         - name: productcatalogservice
-          image: nikhilpunith/product-catalog:20713087864
+          image: nikhilpunith/product-catalog:20723663788
           imagePullPolicy: IfNotPresent
           ports:
             
