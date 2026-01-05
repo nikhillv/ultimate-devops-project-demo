@@ -28,7 +28,6 @@ spec:
         app.kubernetes.io/component: productcatalogservice
         app.kubernetes.io/name: opentelemetry-demo-productcatalogservice
     spec:
-      serviceAccountName: opentelemetry-demo
       containers:
         - name: productcatalogservice
           image: nikhilpunith/product-catalog:20713087864
