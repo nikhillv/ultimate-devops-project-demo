@@ -267,13 +267,13 @@ func (p *productCatalog) GetProduct(ctx context.Context, req *pb.GetProductReque
 	}
 
 	if found == nil {
-		msg := fmt.Sprintf("Product Not Found: %s", req.Id)
+		msg := "Product Not Found: " + req.Id
 		span.SetStatus(otelcodes.Error, msg)
 		span.AddEvent(msg)
 		return nil, status.Errorf(codes.NotFound, msg)
 	}
 
-	msg := fmt.Sprintf("Product Found - ID: %s, Name: %s", req.Id, found.Name)
+	msg := "Product Found - ID: " + req.Id + ", Name: " + found.Name
 	span.AddEvent(msg)
 	span.SetAttributes(
 		attribute.String("app.product.name", found.Name),
@@ -308,14 +308,3 @@ func (p *productCatalog) checkProductFailure(ctx context.Context, id string) boo
 	)
 	return failureEnabled
 }
-
-
-
-
-
-
-
-
-
-
-
